@@ -1,0 +1,72 @@
+﻿@model List<MilkyProjectWebUI.Dtos.ProductDtos.ResultProductWithCategoryDto>
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Sıra No</th>
+                <th>Ürün Adı</th>
+                <th>Eski Fiyat</th>
+                <th>Yeni Fiyat</th>
+                <th>Kategori Adı</th>
+                <th>Durum</th>
+                <th>İşlem</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int sirano = 0;
+            }
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>
+                        @{
+                            sirano++;
+                        } @sirano
+                    </td>
+                    <td>@x.ProductName</td>
+                    <td>@x.OldPrice</td>
+                    <td>@x.NewPrice</td>
+                    <td>@x.category.CategoryName</td>
+                    <td>@x.Status</td>
+                    <td>
+                        <a style="width:100px;" class="btn btn-info" href="/Product/UpdateProduct/@x.ProductId">
+
+                            Düzenle
+                        </a>
+                        <a class="btn btn-danger" href="/Product/DeleteProduct/@x.ProductId">
+
+                            Sil
+                        </a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <a class="btn btn-success" href="/Product/CreateProduct/">Ekle</a>
+    </table>
+</div>
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ProductList</title>
+</head>
+<body>
+</body>
+</html>

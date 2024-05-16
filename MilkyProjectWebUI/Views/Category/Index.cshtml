@@ -1,0 +1,47 @@
+﻿@model List<MilkyProjectWebUI.Dtos.CategoryDtos.ResultCategoryDto>
+
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Sıra No</th>
+            <th>Kategori Adı</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int sirano = 0;
+        }
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@{
+                        sirano++;
+                    } @sirano</td>
+                <td>@x.categoryName</td>
+                <td>
+                    <a style="width:100px;" class="btn btn-info" href="/Category/UpdateCategory/@x.categoryId">
+                        
+                        Düzenle
+                    </a>
+                    <a class="btn btn-danger" href="/Category/DeleteCategory/@x.categoryId">
+                       
+                        Sil
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+    <a class="btn btn-success" href="/Category/CreateCategory/">
+
+        Ekle
+    </a>
+</table>

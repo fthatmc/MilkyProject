@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_HeadComponentPartial")
+
+<body>
+
+    @await Component.InvokeAsync("_TopbarComponentPartial")
+    @await Component.InvokeAsync("_NavbarComponentPartial")
+    @await Component.InvokeAsync("_CarouselComponentPartial")
+    @await Component.InvokeAsync("_AboutComponentPartial")
+    @await Component.InvokeAsync("_FeaturesComponentPartial")
+    @await Component.InvokeAsync("_BannerComponentPartial")
+    @await Component.InvokeAsync("_ServiceComponentPartial")
+    @await Component.InvokeAsync("_GaleryComponentPartial")
+    @await Component.InvokeAsync("_ProductComponentPartial")
+    @await Component.InvokeAsync("_TeamComponentPartial")
+    @await Component.InvokeAsync("_TestimonialComponentPartial")
+    @await Component.InvokeAsync("_FooterComponentPartial")
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    @await Component.InvokeAsync("_ScriptComponentPartial")
+
+</body>
+
+</html>
+
