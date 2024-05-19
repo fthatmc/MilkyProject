@@ -9,5 +9,6 @@ namespace MilkyProject.BusinessLayer.Abstract
 {
     public interface ITeamSocialMediaService : IGenericService<TeamSocialMedia>
     {
+        List<TeamSocialMedia> TGetTeamSocialMediaByTeamId(int id);
     }
 }

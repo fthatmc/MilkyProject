@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MilkyProject.BusinessLayer\MilkyProject.BusinessLayer.csproj" />
+    <ProjectReference Include="..\MilkyProject.DtoLayer\MilkyProject.DtoLayer.csproj" />
     <ProjectReference Include="..\MilkyProject.EntityLayer\MilkyProject.EntityLayer.csproj" />
   </ItemGroup>
 

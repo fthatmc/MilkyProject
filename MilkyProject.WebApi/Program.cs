@@ -19,6 +19,51 @@ builder.Services.AddScoped<ISliderDal, EfSliderDal>();
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<IProductDal, EfProductDal>();
 
+builder.Services.AddScoped<IAboutService, AboutManager>();
+builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+
+builder.Services.AddScoped<IAboutImageService, AboutImageManager>();
+builder.Services.AddScoped<IAboutImageDal, EfAboutImageDal>();
+
+builder.Services.AddScoped<IAboutServiceService, AboutServiceManager>();
+builder.Services.AddScoped<IAboutServiceDal, EfAboutServiceDal>();
+
+builder.Services.AddScoped<IBannerService, BannerManager>();
+builder.Services.AddScoped<IBannerDal, EfBannerDal>();
+
+builder.Services.AddScoped<IBanner2Service, Banner2Manager>();
+builder.Services.AddScoped<IBanner2Dal, EfBanner2Dal>();
+
+builder.Services.AddScoped<IExperienceService, ExperienceManager>();
+builder.Services.AddScoped<IExperienceDal, EfExperienceDal>();
+
+builder.Services.AddScoped<IGalleryService, GalleryManager>();
+builder.Services.AddScoped<IGalleryDal, EfGalleryDal>();
+
+builder.Services.AddScoped<ILocationService, LocationManager>();
+builder.Services.AddScoped<ILocationDal, EfLocationDal>();
+
+builder.Services.AddScoped<IOpenHoursService, OpenHoursManager>();
+builder.Services.AddScoped<IOpenHoursDal, EfOpenHoursDal>();
+
+builder.Services.AddScoped<IServiceService, ServiceManager>();
+builder.Services.AddScoped<IServiceDal, EfServiceDal>();
+
+builder.Services.AddScoped<ISocialMediaService, SocialMediaManager >();
+builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+
+builder.Services.AddScoped<ITeamService, TeamManager>();
+builder.Services.AddScoped<ITeamDal, EfTeamDal>();
+
+builder.Services.AddScoped<ITeamSocialMediaService, TeamSocialMediaManager>();
+builder.Services.AddScoped<ITeamSocialMediaDal, EfTeamSocialMediaDal>();
+
+builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+
+builder.Services.AddScoped<IWhyUsService, WhyUsManager>();
+builder.Services.AddScoped<IWhyUsDal, EfWhyUsDal>();
+
 builder.Services.AddDbContext<MilkyContext>();
 
 builder.Services.AddControllers();

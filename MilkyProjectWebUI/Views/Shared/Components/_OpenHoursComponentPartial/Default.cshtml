@@ -1,0 +1,16 @@
+﻿@model List<ResultOpenHoursDto>
+
+<div class="col-lg-3 col-md-6">
+    @foreach(var item in Model)
+    {
+        <h5 class="text-white mb-4">Çalışma Saatleri</h5>
+        <p class="mb-1">Pazartesi - Cuma</p>
+        <h6 class="text-light">@item.MidWeek</h6>
+        <p class="mb-1">Cumartesi</p>
+        <h6 class="text-light">@item.Weekend</h6>
+        <p class="mb-1">Pazar</p>
+        <h6 class="text-light">@item.ClosedDay</h6>
+    }
+    
+
+</div>

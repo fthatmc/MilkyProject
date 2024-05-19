@@ -1,0 +1,20 @@
+﻿@model List<ResultExperienceDtos>
+
+<div class="col-lg-6">
+    <div class="rounded overflow-hidden">
+        <div class="row g-0">
+
+            @foreach(var item in Model)
+            {
+                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="@item.Colour">
+                        <img class="img-fluid mb-4" src="@item.Icon" alt="">
+                        <h1 class="display-6 text-white" data-toggle="counter-up">@item.Count</h1>
+                        <span class="@item.Span">@item.Title</span>
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </div>
+</div>

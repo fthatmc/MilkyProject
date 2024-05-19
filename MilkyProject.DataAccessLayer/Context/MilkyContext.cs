@@ -33,5 +33,6 @@ namespace MilkyProject.DataAccessLayer.Context
         public DbSet<TeamSocialMedia> TeamSocialMedias { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<WhyUs> WhyUses { get; set; }
+        public DbSet<Service> Services { get; set; }
     }
 }

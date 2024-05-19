@@ -33,6 +33,11 @@ namespace MilkyProject.BusinessLayer.Concrete
             return _teamSocialMediaDal.GetListAll();
         }
 
+        public List<TeamSocialMedia> TGetTeamSocialMediaByTeamId(int id)
+        {
+            return _teamSocialMediaDal.GetTeamSocialMediaByTeamId(id);
+        }
+
         public void TInsert(TeamSocialMedia entity)
         {
             _teamSocialMediaDal.Insert(entity);

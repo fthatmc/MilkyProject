@@ -10,5 +10,6 @@ namespace MilkyProject.EntityLayer.Concrete
     {
         public int GalleryId { get; set; }
         public string ImageUrl { get; set; }
+        public string ImageUrl2 { get; set; }
     }
 }
