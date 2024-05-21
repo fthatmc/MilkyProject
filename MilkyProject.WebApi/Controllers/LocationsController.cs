@@ -43,5 +43,12 @@ namespace MilkyProject.WebApi.Controllers
             _locationService.TUpdate(location);
             return Ok("Lokasyon Başarıyla Güncellendi");
         }
+
+        [HttpGet("GetLocation")]
+        public IActionResult GetLocation(int id)
+        {
+            var values = _locationService.TGetById(id);
+            return Ok(values);
+        }
     }
 }

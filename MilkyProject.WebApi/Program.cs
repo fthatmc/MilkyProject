@@ -64,6 +64,9 @@ builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 builder.Services.AddScoped<IWhyUsService, WhyUsManager>();
 builder.Services.AddScoped<IWhyUsDal, EfWhyUsDal>();
 
+builder.Services.AddScoped<IMessageService, MessageManager>();
+builder.Services.AddScoped<IMessageDal, EfMessageDal>();
+
 builder.Services.AddDbContext<MilkyContext>();
 
 builder.Services.AddControllers();

@@ -44,5 +44,12 @@ namespace MilkyProject.WebApi.Controllers
             return Ok("OpenHours Başarıyla Güncellendi");
         }
 
+        [HttpGet("GetOpenHours")]
+        public IActionResult GetOpenHours(int id)
+        {
+            var values = _openHoursService.TGetById(id);
+            return Ok(values);
+        }
+
     }
 }

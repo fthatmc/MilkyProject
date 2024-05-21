@@ -1,0 +1,56 @@
+﻿@model List<ResultGalleryDtos>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Resim Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Resim ile ilgili işlemleri buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Resim URL-1</th>
+                                        <th>Resim URL-2</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td><img class="rounded-circle header-profile-user" alt="" src="@item.ImageUrl" /></td>
+                                            <td><img class="rounded-circle header-profile-user" alt="" src="@item.ImageUrl2" /></td>
+                                            <td><a href="/Admin/Gallery/UpdateGallery/@item.GalleryId/" class="btn btn-outline-info">Güncelle</a></td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

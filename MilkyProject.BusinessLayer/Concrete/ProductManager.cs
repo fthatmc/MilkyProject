@@ -16,6 +16,17 @@ namespace MilkyProject.BusinessLayer.Concrete
         {
             _productDal = productDal;
         }
+
+        public void TChangeToProductStatusFalse(int id)
+        {
+            _productDal.ChangeToProductStatusFalse(id);
+        }
+
+        public void TChangeToProductStatusTrue(int id)
+        {
+            _productDal.ChangeToProductStatusTrue(id);
+        }
+
         public void TDelete(int id)
         {
             _productDal.Delete(id);

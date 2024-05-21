@@ -43,5 +43,12 @@ namespace MilkyProject.WebApi.Controllers
             _experienceService.TUpdate(experience);
             return Ok("Deneyim Başarıyla Güncellendi");
         }
+
+        [HttpGet("GetExperience")]
+        public IActionResult GetExperience(int id)
+        {
+            var values = _experienceService.TGetById(id);
+            return Ok(values);
+        }
     }
 }

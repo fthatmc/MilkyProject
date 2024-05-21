@@ -43,5 +43,11 @@ namespace MilkyProject.WebApi.Controllers
             _aboutImageService.TUpdate(aboutImage);
             return Ok("Hakkımda Resmi Başarıyla Güncellendi");
         }
+        [HttpGet("GetAboutImage")]
+        public IActionResult GetAboutImage(int id)
+        {
+            var values = _aboutImageService.TGetById(id);
+            return Ok(values);
+        }
     }
 }

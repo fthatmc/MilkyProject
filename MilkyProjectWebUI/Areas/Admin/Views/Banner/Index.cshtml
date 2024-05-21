@@ -1,0 +1,60 @@
+﻿@model List<ResultBannerDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Afiş Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Afiş ile ilgili işlemleri buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Başlık</th>
+                                        <th>İçerik</th>
+                                        <th>Resim</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.Title</td>
+                                            <td>@item.Content</td>
+                                            <td><img class="rounded-circle header-profile-user" alt="" src="@item.ImageUrl" /></td>
+                                            <td><a href="/Admin/Banner/DeleteBanner/@item.BannerId/" class="btn btn-outline-danger">Sil</a></td>
+                                            <td><a href="/Admin/Banner/UpdateBanner/@item.BannerId/" class="btn btn-outline-info">Güncelle</a></td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="/Admin/Banner/CreateBanner/" class="btn btn-outline-primary">Yeni Afiş Girişi</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

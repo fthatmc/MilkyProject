@@ -57,5 +57,19 @@ namespace MilkyProject.WebApi.Controllers
             var values = _productService.TGetProductsWithCategory();
             return Ok(values);
         }
+
+        [HttpGet("ChangeToStatusFalse/{id}")]
+        public IActionResult ChangeToStatusFalse(int id)
+        {
+            _productService.TChangeToProductStatusFalse(id);
+            return Ok("Durum Pasif Yapıldı");
+        }
+
+        [HttpGet("ChangeToStatusTrue/{id}")]
+        public IActionResult ChangeToStatusTrue(int id)
+        {
+            _productService.TChangeToProductStatusTrue(id);
+            return Ok("Durum Aktif Yapıldı");
+        }
     }
 }

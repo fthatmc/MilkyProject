@@ -1,0 +1,85 @@
+﻿@model CreateMessageDto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_HeadComponentPartial")
+
+<body>
+    @await Component.InvokeAsync("_TopbarComponentPartial")
+    @await Component.InvokeAsync("_NavbarComponentPartial")
+
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">İletişim</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">İletişim</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+   
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="section-title bg-white text-center text-primary px-3">Bizimle İletişime Geç</p>
+                <h1 class="mb-5">Bir Sorun Varsa Bizimle İletişime Geç</h1>
+            </div>
+            <div class="row g-5">
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h3 class="mb-4">İletişim formunu eksiksiz doldurun.</h3>
+                    <p class="mb-4">Size kısa sürede ulaşabilememiz için iletişim formunu eksiksiz doldurmanız gerekmektedir.<a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                    <form  method="post" action="/Contact/CreateMessage/" >
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" asp-for="NameSurname" id="name" placeholder="Adınız">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" asp-for="Email" id="email" placeholder="Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" asp-for="Subject" id="subject" placeholder="Konu">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Mesajınız" asp-for="Content" id="message" style="height: 250px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-secondary rounded-pill py-3 px-5" type="submit">Mesaj Gönder</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                @await Component.InvokeAsync("_MessageAddressComponentPartial")
+                
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("_FooterComponentPartial")
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    @await Component.InvokeAsync("_ScriptComponentPartial")
+</body>
+
+</html>

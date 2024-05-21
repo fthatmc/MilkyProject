@@ -43,5 +43,12 @@ namespace MilkyProject.WebApi.Controllers
             _banner2Service.TUpdate(banner);
             return Ok("Banner Başarıyla Güncellendi");
         }
+
+        [HttpGet("GetBanner2")]
+        public IActionResult GetBanner2(int id)
+        {
+            var values = _banner2Service.TGetById(id);
+            return Ok(values);
+        }
     }
 }

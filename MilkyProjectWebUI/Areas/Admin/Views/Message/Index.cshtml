@@ -1,0 +1,62 @@
+﻿@model List<ResultMessageDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Gelen Mesaj Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Gelen Mesaj ile ilgili işlemleri buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Adı Soyadı</th>
+                                        <th>Email</th>
+                                        <th>Konu</th>
+                                        <th>İçerik</th>
+                                        <th>Tarih</th>
+                                        <th>Sil</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.NameSurname</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.Subject</td>
+                                            <td>@item.Content</td>
+                                            <td>@item.Date.ToShortDateString()</td>
+                                            <td><a href="/Admin/Message/DeleteMessage/@item.MessageId/" class="btn btn-outline-danger">Sil</a></td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

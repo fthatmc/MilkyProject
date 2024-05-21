@@ -1,0 +1,58 @@
+﻿@model List<ResultOpenHoursDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Çalışma Saatleri Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Çalışma Saatleri ile ilgili işlemleri buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Hafta İçi</th>
+                                        <th>Hafta Sonu</th>
+                                        <th>Tatil Günü</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.MidWeek</td>
+                                            <td>@item.Weekend</td>
+                                            <td>@item.ClosedDay</td>
+                                            <td><a href="/Admin/OpenHours/UpdateOpenHours/@item.OpenHoursId/" class="btn btn-outline-info">Güncelle</a></td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

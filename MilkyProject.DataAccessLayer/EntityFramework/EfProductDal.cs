@@ -17,6 +17,24 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
         {
         }
 
+        public void ChangeToProductStatusFalse(int id)
+        {
+            var context = new MilkyContext();
+
+            var values = context.Products.Find(id);
+            values.Status = false;
+            context.SaveChanges();
+        }
+
+        public void ChangeToProductStatusTrue(int id)
+        {
+            var context = new MilkyContext();
+
+            var values = context.Products.Find(id);
+            values.Status = true;
+            context.SaveChanges();
+        }
+
         public List<Product> GetProductsWithCategory()
         {
             var context = new MilkyContext();

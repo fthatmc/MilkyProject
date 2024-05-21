@@ -43,5 +43,12 @@ namespace MilkyProject.WebApi.Controllers
             _galleryService.TUpdate(gallery);
             return Ok("Galeri Başarıyla Güncellendi");
         }
+
+        [HttpGet("GetGallery")]
+        public IActionResult GetGallery(int id)
+        {
+            var values = _galleryService.TGetById(id);
+            return Ok(values);
+        }
     }
 }

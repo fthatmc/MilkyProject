@@ -43,5 +43,12 @@ namespace MilkyProject.WebApi.Controllers
             _aboutServiceService.TUpdate(about);
             return Ok("Hakkımda Servis Başarıyla Güncellendi");
         }
+
+        [HttpGet("GetAboutService")]
+        public IActionResult GetAboutService(int id)
+        {
+            var values = _aboutServiceService.TGetById(id);
+            return Ok(values);
+        }
     }
 }
