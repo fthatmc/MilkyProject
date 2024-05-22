@@ -1,0 +1,67 @@
+﻿@model List<ResultWhyUsDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Neden Biz Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Neden Biz ile ilgili işlemleri buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Başlık</th>
+                                        <th>İçerik</th>
+                                        <th>Açıklama</th>
+                                        <th>Kısa İçerik-1</th>
+                                        <th>Kısa İçerik-2</th>
+                                        <th>Kısa İçerik-3</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.Title</td>
+                                            <td>@item.Content</td>
+                                            <td>@item.Description</td>
+                                            <td>@item.Material1</td>
+                                            <td>@item.Material2</td>
+                                            <td>@item.Material3</td>
+                                            <td>
+                                                <a href="/Admin/WhyUs/DeleteWhyUs/@item.WhyUsId/" class="btn btn-outline-danger">Sil</a>
+                                                <a href="/Admin/WhyUs/UpdateWhyUs/@item.WhyUsId/" class="btn btn-outline-info">Güncelle</a>
+                                            </td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="/Admin/WhyUs/CreateWhyUs/" class="btn btn-outline-success">Ekle</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

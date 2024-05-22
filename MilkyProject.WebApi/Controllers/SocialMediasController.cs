@@ -43,5 +43,12 @@ namespace MilkyProject.WebApi.Controllers
             _socialMediaService.TUpdate(socialMedia);
             return Ok("Sosyal Medya Başarıyla Güncellendi");
         }
+
+        [HttpGet("GetSocialMedia")]
+        public IActionResult GetSocialMedia(int id)
+        {
+            var values = _socialMediaService.TGetById(id);
+            return Ok(values);
+        }
     }
 }

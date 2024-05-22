@@ -43,5 +43,12 @@ namespace MilkyProject.WebApi.Controllers
             _testimonialService.TUpdate(testimonial);
             return Ok("Görüş Başarıyla Güncellendi");
         }
+
+        [HttpGet("GetTestimonial")]
+        public IActionResult GetTestimonial(int id)
+        {
+            var values = _testimonialService.TGetById(id);
+            return Ok(values);
+        }
     }
 }

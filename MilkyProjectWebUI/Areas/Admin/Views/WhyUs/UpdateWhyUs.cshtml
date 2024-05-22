@@ -1,0 +1,50 @@
+﻿@model UpdateWhyUsDto
+
+@{
+    ViewData["Title"] = "UpdateWhyUs";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Neden Biz Güncelle</h4>
+                        <p class="card-subtitle mb-4">Neden Biz Güncelleme işlemini burdan yapabilirsiniz. Veri girişinden sonra Güncelle butonuna tıklayarak işlemi tamamlayabilirsiniz.</p>
+                        <form method="post">
+                            <div class="form-group">
+                                <input type="hidden" asp-for="WhyUsId" />
+                                <label for="CategoryName">Başlık</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="CategoryName">İçerik</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Content">
+                            </div>
+                            <div class="form-group">
+                                <label for="CategoryName">Açıklama</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Description">
+                            </div>
+                            <div class="form-group">
+                                <label for="CategoryName">Kısa İçerik-1</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Material1">
+                            </div>
+                            <div class="form-group">
+                                <label for="CategoryName">Kısa İçerik-2</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Material2">
+                            </div>
+                            <div class="form-group">
+                                <label for="CategoryName">Kısa İçerik-3</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Material3">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Güncelle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

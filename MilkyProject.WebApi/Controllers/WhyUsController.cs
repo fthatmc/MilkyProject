@@ -43,5 +43,12 @@ namespace MilkyProject.WebApi.Controllers
             _whyUsService.TUpdate(whyUs);
             return Ok("Neden Biz Başarıyla Güncellendi");
         }
+
+        [HttpGet("GetWhyUs")]
+        public IActionResult GetWhyUs(int id)
+        {
+            var values = _whyUsService.TGetById(id);
+            return Ok(values);
+        }
     }
 }

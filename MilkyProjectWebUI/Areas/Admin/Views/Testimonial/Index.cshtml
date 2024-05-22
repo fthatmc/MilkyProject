@@ -1,0 +1,63 @@
+﻿@model List<ResultTestimonialDtos>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Referans Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Referans ile ilgili işlemleri buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Adı Soyadı</th>
+                                        <th>Başlık</th>
+                                        <th>İçerik</th>
+                                        <th>Resim</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.Name</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Comment</td>
+                                            <td><img class="rounded-circle header-profile-user" alt="" src="@item.ImageUrl" /></td>
+                                            <td>
+                                                <a href="/Admin/Testimonial/DeleteTestimonial/@item.TestimonialId/" class="btn btn-outline-danger">Sil</a>
+                                                <a href="/Admin/Testimonial/UpdateTestimonial/@item.TestimonialId/" class="btn btn-outline-info">Güncelle</a>
+                                            </td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="/Admin/Testimonial/CreateTestimonial/" class="btn btn-outline-success">Ekle</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

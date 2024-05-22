@@ -1,0 +1,41 @@
+﻿@model CreateTestimonialDtos
+
+@{
+    ViewData["Title"] = "CreateTestimonial";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Referans Ekle</h4>
+                        <p class="card-subtitle mb-4">Referans Ekleme işlemini burdan yapabilirsiniz. Veri girişinden sonra Güncelle butonuna tıklayarak işlemi tamamlayabilirsiniz.</p>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="CategoryName">Adı Soyadı</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="CategoryName">Başlık</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="CategoryName">İçerik</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Comment">
+                            </div>
+                            <div class="form-group">
+                                <label for="CategoryName">Resim URL</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="ImageUrl">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
