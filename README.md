@@ -1,4 +1,8 @@
 
+
+
+![Ekran görüntüsü 2024-05-23 182252](https://github.com/fthatmc/MilkyProject/assets/136472585/8edec019-6ccd-4e81-adee-79b6a3c2cd4f)
+
 ![Ekran görüntüsü 2024-05-23 181920](https://github.com/fthatmc/MilkyProject/assets/136472585/460676f4-5a9d-496d-9643-f25b0b59e21b)
 
 ![1](https://github.com/fthatmc/MilkyProject/assets/136472585/3deac869-f583-4735-9324-3aeb5e70d1bb)
