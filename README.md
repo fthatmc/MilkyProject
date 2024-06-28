@@ -1,4 +1,16 @@
+# MilkyProject
 
+Bu proje, ASP.NET Core 6.0 ve Web API kullanılarak geliştirilmiştir. Tüm CRUD işlemleri API üzerinden gerçekleştirir ve bu işlemler MVC tarafında consume edilir. Dinamik veritabanı yönetimi için Entity Framework Code First kullanılmıştır. 
+
+
+## Öne Çıkan Teknolojiler
+- Asp.Net Core 6
+-  Code First
+- Repository Design Pattern
+- Asp.Net Core Web Api
+- Swagger
+- Identity
+- Mssql
 
 
 ![Ekran görüntüsü 2024-05-23 182252](https://github.com/fthatmc/MilkyProject/assets/136472585/8edec019-6ccd-4e81-adee-79b6a3c2cd4f)
